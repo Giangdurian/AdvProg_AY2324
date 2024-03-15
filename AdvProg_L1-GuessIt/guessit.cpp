@@ -71,20 +71,6 @@ bool checkSuccess(string answer) {
 
 /***
     Args:
-        isContinued (char): player's choice
-    Returns:
-        result (bool) : continue playing or not
-***/
-bool checkContinuePlaying(char isContinued) {
-    // TODO: return result after checking player continue playing or not
-    bool result = false;
-    if(isContinued == 'y')  result = true;
-    return result;
-}
-
-
-/***
-    Args:
         
     Returns:
         isContinues (char) : player's choice (continue playing or not)
@@ -95,6 +81,19 @@ char getPlayerOpinion() {
     //cout << "Continue or not(y or n): ";
     cin >> isContinued;
     return isContinued;
+}
+
+/***
+    Args:
+        isContinued (char): player's choice
+    Returns:
+        result (bool) : continue playing or not
+***/
+bool checkContinuePlaying(char isContinued) {
+    // TODO: return result after checking player continue playing or not
+    bool result = false;
+    if(isContinued == getPlayerOpinion())  result = true;
+    return result;
 }
 
 
