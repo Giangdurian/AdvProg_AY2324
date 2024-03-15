@@ -6,8 +6,6 @@
 #include <cppunit/extensions/HelperMacros.h>
 #include <cppunit/BriefTestProgressListener.h>
 #include <cppunit/extensions/TestFactoryRegistry.h>
-
-
 #include "guessit.h"
 
 struct TestStruct {
