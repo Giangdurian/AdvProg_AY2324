@@ -122,6 +122,7 @@ void updateEnteredChars(const char ch, string& chars){
     // TODO: append the character ch is in end of the text chars
     //if(!isCharInWord(ch,chars))  
         chars += ch;
+        chars += ' ';
 }
 
 /***
