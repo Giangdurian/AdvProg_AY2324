@@ -28,7 +28,7 @@ vector<string> filterWordsByLen(int wordLen, const vector<string>& vocabulary)
 {
     vector<string> answer;
     for(auto x:vocabulary){
-        if(x.size() == wordLen){
+        if((int)x.size() == wordLen){
             answer.push_back(x);
         }
     }
@@ -45,7 +45,10 @@ vector<string> filterWordsByLen(int wordLen, const vector<string>& vocabulary)
 
 char nextCharWhenWordIsNotInDictionary(const set<char>& selectedChars)
 {
-    char answer;
+    char answer = 'a';
+    while(selectedChars.find(answer) == selectedChars.end()){
+        answer++;
+    }
     //Write your code here
 
     return answer;
@@ -104,6 +107,8 @@ char findBestChar(const vector<string>& candidateWords, const set<char>& selecte
 {
     char answer;
     //Write your code here
+    map<char,int> occurrence = countOccurrences(candidateWords);
+    answer = findMostFrequentChar(occurrence,selectedChars);
     return answer;
 }
 
@@ -126,7 +131,10 @@ string getWordMask(char nextChar)
 
 bool isCorrectChar(char ch, const string& mask)
 {
-    bool answer;
+    bool answer = false;
+    for(auto c:mask){
+        if(ch == c) return true;
+    }
     //Write your code here
     return answer;
 }
@@ -141,8 +149,11 @@ bool isCorrectChar(char ch, const string& mask)
 ***/
 bool isWholeWord(const string& mask)
 {
-     bool answer;
+     bool answer = true;
     //Write your code here
+    for(int i = 0; i < mask.size(); i++){
+        if(mask[i] == '-' || mask[i] == '_')    return false;
+    }
     return answer;
 }
 
@@ -160,8 +171,14 @@ bool isWholeWord(const string& mask)
 ***/
 bool wordConformToMask(const string& word, const string& mask, char ch) 
 {
-    bool answer;
+    bool answer = true;
     //Write your code here
+    for(int i = 0; i < mask.size(); i++){
+        if(word[i] == ch && mask[i] != ch){
+            answer = false;
+            break;
+        }
+    }
     return answer;
 }
 
@@ -181,5 +198,10 @@ vector<string> filterWordsByMask(const vector<string>& words, const string& mask
 {
     vector<string> answer;
     //Write your code here
+    for(auto word:words){
+        if(wordConformToMask(word,mask,ch)){
+            answer.push_back(word);
+        }
+    }
     return answer;
 }
