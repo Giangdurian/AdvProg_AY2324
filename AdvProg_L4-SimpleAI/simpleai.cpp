@@ -150,7 +150,7 @@ bool isWholeWord(const string& mask)
 {
     bool answer = true;
     //Write your code here
-    if(mask.find('_') != string::npos)  return false;
+    if(mask.find('-') != string::npos)  return false;
     return answer;
 }
 
