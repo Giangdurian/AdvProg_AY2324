@@ -23,7 +23,7 @@ void Painter::jumpForward(int numPixel)
 {
     double radian = (angle / 180) * 3.14;
     x += cos(radian) * numPixel;
-    y += cos(radian) * numPixel
+    y += cos(radian) * numPixel;
     // TODO: jump the painter forward
 }
 
