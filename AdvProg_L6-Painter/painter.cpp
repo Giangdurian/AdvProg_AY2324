@@ -25,7 +25,7 @@ void Painter::jumpForward(int numPixel)
 {
     double radian = (angle / 180) * PI;
     x += cos(radian) * numPixel;
-    y += cos(radian) * numPixel;
+    y -= sin(radian) * numPixel;
     // TODO: jump the painter forward
 }
 
@@ -53,7 +53,8 @@ void Painter::turnLeft(double degree)
 {
     // TODO: rotate left the painter   
     this->angle += degree;
-    setAngle(fmod(angle,360));
+    int tmp = degree / 360;
+    setAngle(angle - tmp * 360);
 }
 
 
