@@ -21,6 +21,7 @@ void Painter::setColor(SDL_Color color)
 ***/
 
 const double PI = 3.1415926535898;
+
 void Painter::jumpForward(int numPixel)
 {
     double radian = (angle / 180) * PI;
@@ -53,9 +54,7 @@ void Painter::turnLeft(double degree)
 {
     // TODO: rotate left the painter   
     this->angle += degree;
-    int tmp = degree / 360;
-    setAngle(angle - tmp * 360);
-}
+    setAngle(fmod(angle, 360));
 
 
 /***
