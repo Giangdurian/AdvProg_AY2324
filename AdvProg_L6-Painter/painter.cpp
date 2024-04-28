@@ -23,9 +23,9 @@ const double PI = 3.14159265358980;
 void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
-    double rad = (angle / 180) * M_PI;
-    x += cos(rad) * numPixel;
-    y -= sin(rad) * numPixel;
+    double radian = (angle / 180) * M_PI;
+    x += cos(radian) * numPixel;
+    y -= sin(radian) * numPixel;
 }
 
 
