@@ -13,7 +13,7 @@ void Painter::setColor(SDL_Color color)
 }
 
 
-const double PI = 3.1415926535898;
+const double PI = 3.14159265358980;
 /***
     Args: numPixel (int): number of pixel for jumping forward
         
@@ -23,9 +23,9 @@ const double PI = 3.1415926535898;
 void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
-    double radian = (angle / 180) * PI;
-    x += cos(radian) * numPixel;
-    y -= sin(radian) * numPixel;
+    double rad = (angle / 180) * M_PI;
+    x += cos(rad) * numPixel;
+    y -= sin(rad) * numPixel;
 }
 
 
@@ -113,7 +113,7 @@ Painter::Painter(SDL_Window* window, SDL_Renderer *renderer)
 
 void Painter::createCircle(int radius)
 {
-    double rad = (angle / 180) * PI;
+    double rad = (angle / 180) * M_PI;
     int centerX = x + (int) (cos(rad) * (double) radius);;
     int centerY = y - (int) (sin(rad) * (double) radius);;
 
