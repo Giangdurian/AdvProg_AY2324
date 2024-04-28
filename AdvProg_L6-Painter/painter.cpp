@@ -113,7 +113,7 @@ Painter::Painter(SDL_Window* window, SDL_Renderer *renderer)
 
 void Painter::createCircle(int radius)
 {
-    double rad = (angle / 180) * M_PI;
+    double rad = (angle / 180) * PI;
     int centerX = x + (int) (cos(rad) * (double) radius);;
     int centerY = y - (int) (sin(rad) * (double) radius);;
 
