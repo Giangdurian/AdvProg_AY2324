@@ -13,7 +13,7 @@ void Painter::setColor(SDL_Color color)
 }
 
 
-const double PI = 3.14159265358980;
+const double PI = 3.1415926535898;
 /***
     Args: numPixel (int): number of pixel for jumping forward
         
@@ -23,7 +23,7 @@ const double PI = 3.14159265358980;
 void Painter::jumpForward(int numPixel)
 {
     // TODO: jump the painter forward
-    double rad = (angle / 180) * M_PI;
+    double rad = (angle / 180) * PI;
     x += cos(rad) * numPixel;
     y -= sin(rad) * numPixel;
 }
